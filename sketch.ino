@@ -7,7 +7,8 @@ Adafruit_MPU6050 mpu;
 float x = 0, y = 0, z = 0; //eixos
 
 #define ssid_wifi "Wokwi-GUEST"
-#define password_wifi "" //na simulação tem que ficar dessa forma pois não pega o wifi do dispositivo
+#define password_wifi "" 
+// na simulação tem que ficar dessa forma pois não pega o wifi do dispositivo
 
 
 int maxValue = 9; //variação maior q 9 = possível queda
@@ -17,7 +18,7 @@ const long MessagesInterval = 30000; // 30s
 unsigned long VerifyTelegram = 0;
 
 //TELEGRAM API TOKEN
-const char* BotToken = "SEU_TOKEN";  // crie um bot no Telegram pelo @BotFather, copie o token gerado e substitua no código. Não utilize tokens de terceiros
+const char* BotToken = "SEU_TOKEN";  // crie um bot no Telegram pelo @BotFather, copie o token gerado e substitua no código.
 CTBot myBot;
 TBMessage msg;
 
@@ -37,8 +38,8 @@ void SendMessage() {
 void CheckFall(float v1, float v2) {
   float vt = v1 - v2; // difereça entre o valor antigo e o novo
   if (vt <= maxValue * -1 || vt >= maxValue) { //Se a diferença for muito positiva ou muito negativa significa movimento brusco
-    SendMessage(); // caso o valor acima esteja correto chama a função de mandar mensagem e atualiza valores para evitar spam
-    ReadValues();
+    SendMessage(); // caso o valor acima esteja correto chama a função de mandar mensagem 
+    ReadValues(); //atualiza valores para evitar spam
   }
 }
 
