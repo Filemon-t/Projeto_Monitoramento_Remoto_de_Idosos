@@ -13,10 +13,6 @@ float x = 0, y = 0, z = 0; //eixos
 
 int maxValue = 9; //variação maior q 9 = possível queda
 
-// para não sobrecarregar o dispositivo e a rede pelo excesso de verificações do telegram
-const long MessagesInterval = 30000; // 30s
-unsigned long VerifyTelegram = 0;
-
 //TELEGRAM API TOKEN
 const char* BotToken = "SEU_TOKEN";  // crie um bot no Telegram pelo @BotFather, copie o token gerado e substitua no código.
 CTBot myBot;
