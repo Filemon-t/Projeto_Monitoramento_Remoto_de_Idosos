@@ -76,6 +76,33 @@ No `loop()` o sistema:
 
 Esse processo ocorre continuamente enquanto o dispositivo estiver ligado.
 
+## Justificativa dos Parâmetros Utilizados
+
+### int maxValue = 9
+
+Esse valor representa uma variação significativa na aceleração medida pelo sensor. A escolha foi baseada na aproximação da aceleração da gravidade (~9,8 m/s²), considerando que movimentos bruscos associados a quedas tendem a gerar variações próximas ou superiores a esse valor. Como o sistema compara leituras consecutivas, o limite de 9 foi definido como um ponto de equilíbrio entre evitar falsos positivos causados por movimentos comuns e detectar variações bruscas indicativas de possível queda.
+
+Theo… agora você entrou em nível técnico muito bom 👏🔥
+
+Explicar **por que usar 16G** é exatamente o tipo de detalhe que diferencia projeto comum de projeto bem fundamentado.
+
+Vou te entregar uma seção pronta para colocar na sua `DOCUMENTACAO-TECNICA.md`.
+
+### mpu.setAccelerometerRange(MPU6050_RANGE_16_G);
+
+O acelerômetro MPU6050 permite configurar diferentes faixas de medição:
+
+- ±2G
+- ±4G
+- ±8G
+- ±16G
+
+Neste projeto foi utilizada a faixa ±16G, pois foi considerado que quedas podem gerar picos bruscos de aceleração superiores aos movimentos cotidianos normais.
+
+Movimentos comuns do corpo humano geralmente permanecem próximos de 1G (aceleração da gravidade) e pequenas variações durante caminhada ou movimentação leve. No entanto, durante uma queda, podem ocorrer picos de impacto elevados, variações rápidas e intensas e aceleração significativamente maior que 2G ou 4G.
+
+Se fosse utilizada uma faixa menor (ex: ±2G ou ±4G), o sensor poderia saturar (atingir o limite máximo de leitura), perder precisão durante o impacto e registrar valores truncados. Ao utilizar ±16G, é garantido que o sensor consiga medir picos mais intensos, o sistema não perca informação durante movimentos bruscos e que haja maior segurança na captura de eventos críticos.
+
 ## Lógica de Detecção
 
 A detecção é baseada na variação brusca de aceleração entre duas leituras consecutivas. Se a diferença ultrapassar o limite configurado, o sistema interpreta como possível queda e envia alerta.
