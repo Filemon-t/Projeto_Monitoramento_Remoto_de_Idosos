@@ -82,12 +82,6 @@ Esse processo ocorre continuamente enquanto o dispositivo estiver ligado.
 
 Esse valor representa uma variação significativa na aceleração medida pelo sensor. A escolha foi baseada na aproximação da aceleração da gravidade (~9,8 m/s²), considerando que movimentos bruscos associados a quedas tendem a gerar variações próximas ou superiores a esse valor. Como o sistema compara leituras consecutivas, o limite de 9 foi definido como um ponto de equilíbrio entre evitar falsos positivos causados por movimentos comuns e detectar variações bruscas indicativas de possível queda.
 
-Theo… agora você entrou em nível técnico muito bom 👏🔥
-
-Explicar **por que usar 16G** é exatamente o tipo de detalhe que diferencia projeto comum de projeto bem fundamentado.
-
-Vou te entregar uma seção pronta para colocar na sua `DOCUMENTACAO-TECNICA.md`.
-
 ### mpu.setAccelerometerRange(MPU6050_RANGE_16_G);
 
 O acelerômetro MPU6050 permite configurar diferentes faixas de medição:
