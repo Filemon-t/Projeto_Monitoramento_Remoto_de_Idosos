@@ -1,0 +1,3 @@
+ArduinoJson
+Adafruit MPU6050
+cbot@wokwi:3b9bdca0dcb998ff5bbba852722c064324423f73
