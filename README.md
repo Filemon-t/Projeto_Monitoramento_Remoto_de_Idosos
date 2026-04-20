@@ -16,4 +16,4 @@ A solução foi validada por meio de simulações digitais, permitindo testar ce
 ## Autores
 
 - **Amanda Cecatto** – [LinkedIn](https://www.linkedin.com/in/amanda-cecatto-77979a2a7/)
-- **Nathália Filemon Ferreira da Silva** – [LinkedIn](https://www.linkedin.com/in/nathalia-filemon-4a62ab278/)
+- **Theo Filemon da Silva** – [LinkedIn](https://www.linkedin.com/in/nathalia-filemon-4a62ab278/)
